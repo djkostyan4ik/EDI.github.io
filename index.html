@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+    CS2Stats
+    </title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="sitescript.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+    <div class = "Name">
+      <h1><span><a id="LOGO" href="index.html">CS2Stats</a></span></h1>
+    </div>
+    </header>
+    <section>
+      
+      <center>
+        <h2>Our Best Players</h2>
+        <table id="data-table">
+          <thead>
+              <tr>
+                  <th>Rank</th>
+                  <th>Name</th>
+                  <th>Nationality</th>
+                  <th>Fav. Team</th>
+                  <th>Age</th>
+                  <th>Kills per round</th>
+                  <th>Headshot percentage</th>
+                  <th>Rating</th>
+                  <th>Total maps played</th>
+                  <th>total prize money</th>
+              </tr>
+          </thead>
+          <tbody id="data-list"></tbody>
+      </table></center>
+  </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Replace 'YOUR_API_ENDPOINT' with the actual API endpoint URL
+            const apiUrl = 'https://my.api.mockaroo.com/players_ranking.json?key=86e5b820';
+        
+            // Fetch data from the API using Fetch API
+            fetch(apiUrl)
+                .then(response => response.json())
+                .then(data => {
+                    // Extract names and scores for the chart
+                    const names = data.map(player => player.player_name);
+                    const scores = data.map(player => player.total_maps_played);
+        
+                    // Create a bar chart
+                    createBarChart(names, scores);
+                })
+                .catch(error => console.error('Error fetching data:', error));
+        
+            function createBarChart(names, scores) {
+                const ctx = document.getElementById('myChart').getContext('2d');
+                const myChart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: names,
+                        datasets: [{
+                            label: 'Player total maps played',
+                            data: scores,
+                            backgroundColor: 'rgba(75, 192, 192, 0.2)', // Bar color
+                            borderColor: 'rgba(75, 192, 192, 1)', // Border color
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                });
+            }
+        });
+        
+    </script>
+    <center><div style="width: 50%; margin: 0; align-items:center">
+    <canvas id="myChart" width="300" height="200"></canvas>
+    </div></center>
+    <script>
+        const apiUrl = 'https://my.api.mockaroo.com/players_ranking.json?key=86e5b820';
+        fetch(apiUrl)
+                .then(response => response.json())
+                .then(data => {
+                    // Extract names and scores for the chart
+                    const names = data.map(player => player.player_name);
+                    const scores = data.map(player => player.age);
+        
+                    // Create a bar chart
+                    createBarChart(names, scores);
+                })
+                .catch(error => console.error('Error fetching data:', error));
+        const config = {
+            type: 'polarArea',
+            data: scores,
+            options: {
+                borderColor: white,
+
+
+            }
+          };
+          function createBarChart(names, scores) {
+                const ctx = document.getElementById('myChart2').getContext('2d');
+                const myChart = new Chart(ctx, {
+                    type: 'polarArea',
+                    data: {
+                        labels: names,
+                        datasets: [{
+                            label: 'Our players age',
+                            data: scores,
+                            backgroundColor: [
+                            'rgb(255,128,36)',
+                            'rgb(255,13,36)',
+                            'rgb(120,67,122)',
+                            'rgb(21,2,99)',
+                            'rgb(223,128,190)',
+
+                            ],
+                            borderColor: 'rgba(75, 192, 192, 1)', // Border color
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        
+                    }
+                });
+            }
+    </script>
+    <div style="width: 50%;">
+    <canvas id="myChart2"></canvas>
+    </div>
+    <div class="members-list">
+        <h2>Project Team Members</h2>
+        <ul>
+            <li><span class="member-name" style="color: #847577;">Group Leader - [Mateusz Wójcik]</span></li>
+            <li><span class="member-name" style="color: #847577;">Team Member - [Jan Gąsienica]</span></li>
+            <li><span class="member-name" style="color: #847577;">Team Member - [Konstantyn Malinowski]</span></li>
+        </ul>
+    </div>
+    </section>
+    
+<footer>
+    <div class="footer-content">
+
+    </div>
+</footer>
+</body>
+</html>

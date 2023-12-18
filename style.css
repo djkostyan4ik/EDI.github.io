@@ -1,0 +1,73 @@
+body{
+    font-family: "Poppins";
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+    background-color: #3e4050;
+    color: #c0c0c0;
+}
+h1{
+    text-align: center;
+    color: #9c9fac;
+    padding: 10px;
+}
+#LOGO{
+    cursor: pointer;
+    text-decoration: none;
+    color: #9c9fac;
+}
+.Name{
+    font-size: 30px;
+    width: 50%; 
+    margin: 0 auto; 
+}
+.members-list {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #FBFBF2;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.members-list h2 {
+    color: #847577;
+}
+
+.members-list ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.members-list li {
+    margin: 10px 0;
+}
+
+.member-name {
+    font-weight: bold;
+}
+section{
+    text-align: ce;
+    align-items: center;
+    margin: 0;
+}
+#data-table {
+    margin: 0;
+    width: 70%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+#data-table th, #data-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+#data-table th {
+    background-color: #4a5170;
+    color: white;
+}
+.footer-content{
+    float: right;
+}
