@@ -26,6 +26,7 @@
         <h2>Our Best Players</h2>
         <table id="data-table">
           <thead>
+              <!--Nagłówki tabeli-->
               <tr>
                   <th>Rank</th>
                   <th>Name</th>
@@ -39,34 +40,41 @@
                   <th>total prize money</th>
               </tr>
           </thead>
+            <!--Tu są dane-->
           <tbody id="data-list"></tbody>
       </table></center>
   </div>
+        <!--Skrypt do tabeli-->
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            // Replace 'YOUR_API_ENDPOINT' with the actual API endpoint URL
+            // URL naszego API ze strony mockaroo
             const apiUrl = 'https://my.api.mockaroo.com/players_ranking.json?key=86e5b820';
         
-            // Fetch data from the API using Fetch API
+            // metoda Fetch do pobierania danych
             fetch(apiUrl)
                 .then(response => response.json())
                 .then(data => {
-                    // Extract names and scores for the chart
+                    // do stałych przypisuje wartości pobrane z metody fetch (imię gracza oraz ilośc rozegranych map)
                     const names = data.map(player => player.player_name);
                     const scores = data.map(player => player.total_maps_played);
         
-                    // Create a bar chart
+                    // za pomocą charts.js tworzymy chart typu bars
                     createBarChart(names, scores);
                 })
+                // gdyby bład to error
                 .catch(error => console.error('Error fetching data:', error));
-        
+        // funkcja do wsadzania danych i rysowania charta 
             function createBarChart(names, scores) {
+                // pobiera dane ze strony (szuka canvy o ID myChart
                 const ctx = document.getElementById('myChart').getContext('2d');
                 const myChart = new Chart(ctx, {
+                    // właściwości charta
                     type: 'bar',
                     data: {
+                        //labele z imionami
                         labels: names,
                         datasets: [{
+                            //labele z liczbami
                             label: 'Player total maps played',
                             data: scores,
                             backgroundColor: 'rgba(75, 192, 192, 0.2)', // Bar color
@@ -90,6 +98,7 @@
     <canvas id="myChart" width="300" height="200"></canvas>
     </div></center>
     <script>
+        // drugi chart jeszcze do dopracowania
         const apiUrl = 'https://my.api.mockaroo.com/players_ranking.json?key=86e5b820';
         fetch(apiUrl)
                 .then(response => response.json())
