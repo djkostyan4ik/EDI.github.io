@@ -43,113 +43,21 @@
             <!--Tu są dane-->
           <tbody id="data-list"></tbody>
       </table></center>
+      <br>
   </div>
-        <!--Skrypt do tabeli-->
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            // URL naszego API ze strony mockaroo
-            const apiUrl = 'https://my.api.mockaroo.com/players_ranking.json?key=86e5b820';
-        
-            // metoda Fetch do pobierania danych
-            fetch(apiUrl)
-                .then(response => response.json())
-                .then(data => {
-                    // do stałych przypisuje wartości pobrane z metody fetch (imię gracza oraz ilośc rozegranych map)
-                    const names = data.map(player => player.player_name);
-                    const scores = data.map(player => player.total_maps_played);
-        
-                    // za pomocą charts.js tworzymy chart typu bars
-                    createBarChart(names, scores);
-                })
-                // gdyby bład to error
-                .catch(error => console.error('Error fetching data:', error));
-        // funkcja do wsadzania danych i rysowania charta 
-            function createBarChart(names, scores) {
-                // pobiera dane ze strony (szuka canvy o ID myChart
-                const ctx = document.getElementById('myChart').getContext('2d');
-                const myChart = new Chart(ctx, {
-                    // właściwości charta
-                    type: 'bar',
-                    data: {
-                        //labele z imionami
-                        labels: names,
-                        datasets: [{
-                            //labele z liczbami
-                            label: 'Player total maps played',
-                            data: scores,
-                            backgroundColor: 'rgba(75, 192, 192, 0.2)', 
-                            borderColor: 'rgba(75, 192, 192, 1)', 
-                            borderWidth: 1
-                        }]
-                    },
-                    options: {
-                        scales: {
-                            y: {
-                                beginAtZero: true
-                            }
-                        }
-                    }
-                });
-            }
-        });
-        
-    </script>
     <center><div style="width: 50%; margin: 0; align-items:center">
     <canvas id="myChart" width="300" height="200"></canvas>
     </div></center>
     <script>
-        // drugi chart jeszcze do dopracowania
-        const apiUrl = 'https://my.api.mockaroo.com/players_ranking.json?key=86e5b820';
-        fetch(apiUrl)
-                .then(response => response.json())
-                .then(data => {
-                    // Extract names and scores for the chart
-                    const names = data.map(player => player.player_name);
-                    const scores = data.map(player => player.age);
         
-                    // Create a bar chart
-                    createBarChart(names, scores);
-                })
-                .catch(error => console.error('Error fetching data:', error));
-        const config = {
-            type: 'polarArea',
-            data: scores,
-            options: {
-                borderColor: white,
-
-
-            }
-          };
-          function createBarChart(names, scores) {
-                const ctx = document.getElementById('myChart2').getContext('2d');
-                const myChart = new Chart(ctx, {
-                    type: 'polarArea',
-                    data: {
-                        labels: names,
-                        datasets: [{
-                            label: 'Our players age',
-                            data: scores,
-                            backgroundColor: [
-                            'rgb(255,128,36)',
-                            'rgb(255,13,36)',
-                            'rgb(120,67,122)',
-                            'rgb(21,2,99)',
-                            'rgb(223,128,190)',
-
-                            ],
-                            borderColor: 'rgba(75, 192, 192, 1)', // Border color
-                            borderWidth: 1
-                        }]
-                    },
-                    options: {
-                        
-                    }
-                });
-            }
     </script>
+    <center>
+        <br>
+        <br>
     <div style="width: 50%;">
     <canvas id="myChart2"></canvas>
     </div>
+    </center>
     <div class="members-list">
         <h2>Project Team Members</h2>
         <ul>
