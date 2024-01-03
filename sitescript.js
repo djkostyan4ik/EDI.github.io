@@ -1,13 +1,14 @@
 document.addEventListener('DOMContentLoaded', function () {
     // adres API naszych danych
     const apiUrl = 'https://my.api.mockaroo.com/players_ranking.json?key=86e5b820';
-
+    const numberOfData = prompt('Enter the number of data to display:', '100');
+    const limit = parseInt(numberOfData);
     // Fetch data z API (imię, total maps played, wiek)
     fetch(apiUrl)
         .then(response => response.json())
         .then(data => {
             // Limit data to the first ** items
-            const limitedData = data.slice(0, 10);
+            const limitedData = data.slice(0, limit);
 
             const names = limitedData.map(player => player.player_name);
             const scores = limitedData.map(player => player.total_maps_played);
