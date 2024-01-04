@@ -1,73 +1,97 @@
 body{
-    font-family: "Poppins";
-    margin: 0;
+    font-family:'Times New Roman', Times, serif;
+    margin: 5px;
     justify-content: center;
     align-items: center;
-    background-color: #3e4050;
-    color: #c0c0c0;
+    background-color:blanchedalmond;
+    color:rgb(82, 147, 150);
 }
-h1{
+
+.header{
     text-align: center;
-    color: #9c9fac;
-    padding: 10px;
-}
-#LOGO{
-    cursor: pointer;
-    text-decoration: none;
-    color: #9c9fac;
-}
-.Name{
+    color:#6f6062;
+    padding: 0px;
     font-size: 30px;
     width: 50%; 
     margin: 0 auto; 
 }
-.members-list {
-    max-width: 600px;
-    margin: 50px auto;
-    padding: 20px;
-    background-color: #FBFBF2;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+.second_paragraph{
+    font-size: 30px;
+    text-align: center;
+    margin: 5px;
 }
 
-.members-list h2 {
+.LOGO{
+    cursor: pointer;
+    text-decoration: none;
     color: #847577;
+    font-size: 60px;
 }
 
-.members-list ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.members-list li {
-    margin: 10px 0;
-}
-
-.member-name {
-    font-weight: bold;
-}
-section{
-    text-align: ce;
-    align-items: center;
-    margin: 0;
-}
-#data-table {
+.data-table {
     margin: 0;
     width: 70%;
     border-collapse: collapse;
     margin-top: 20px;
+    margin-bottom: 20px;
 }
 
-#data-table th, #data-table td {
-    border: 1px solid #ddd;
+.data-table th, .data-table td {
+    border: 2px solid #a9a0a0;
     padding: 8px;
     text-align: left;
 }
 
-#data-table th {
+.data-table th {
     background-color: #4a5170;
-    color: white;
+    color: rgb(230, 227, 227);
 }
+
+.bar_chart{
+    width: 100%;
+    margin: 50px auto;
+    align-items: center;
+}
+
+.pie_chart{
+    width: 80%;
+    height: 60%;
+    margin: 50px auto;
+    align-items: center;
+}
+
+.members-list {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: darkolivegreen;
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.mem_list_h2 {
+    color: #f1f1f1;
+    font-size: 25px;
+}
+
+.mem_list_ul {
+    list-style-type: none;
+    padding: 0;
+    font-size: px;
+}
+
+.mem_list_li {
+    margin: 10px 0;
+    font-weight: bold;
+}
+
+.section{
+    text-align: left;
+    align-items: center;
+    margin: 0;
+}
+
 .footer-content{
     float: right;
 }

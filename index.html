@@ -3,9 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>
-    CS2Stats
-    </title>
+    <title>CS2Stats</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="sitescript.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -15,72 +13,82 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
 </head>
 <body>
+
     <header>
-    <div class = "Name">
-      <h1><span><a id="LOGO" href="index.html">CS2Stats</a></span></h1>
-    </div>
-    </header>
-    <section>
-      <center>
-        <h2>Our Best Players</h2>
-        <table id="data-table">
-          <thead>
-              <!--Nagłówki tabeli--> 
-              <tr>
-                  <th>Rank</th>
-                  <th>Name</th>
-                  <th>Nationality</th>
-                  <th>Fav. Team</th>
-                  <th>Age</th>
-                  <th>Kills per round</th>
-                  <th>Headshot percentage</th>
-                  <th>Rating</th>
-                  <th>Total maps played</th>
-                  <th>total prize money</th>
-              </tr>
-          </thead>
-            <!--Tu są dane-->
-          <tbody id="data-list"></tbody>
-      </table></center>
-      <br>
-  </div>
-    <!--Pierwszy wykres-->
-    <center>
-    <div style="width: 50%; margin: 0; align-items:center">
-    <canvas id="myChart" width="300" height="200"></canvas>
-    </div>
-    </center>
-    <!--Drugi wykres
-    <center>
-    <br>
-    <br>
-    <div style="width: 50%;">
-    <canvas id="myChart2"></canvas>
-    </div>
-    </center>-->
-    <!-- 3 wykres -->
-    <center>
-      <br>
-      <br>
-      <div style="width: 50%;">
-      <canvas id="myChart3"></canvas>
+      
+      <div class="header">
+        <h1><span><a class="LOGO" href="index.html">CS2Stats</a></span></h1>
       </div>
+
+    </header>
+
+    <section>
+      
+      <center>
+        
+        <h2 class="second_paragraph">Our Best Players</h2>
+
+        <table class="data-table">
+          
+          <thead>
+
+            <!--Nagłówki tabeli--> 
+            
+            <tr>
+
+              <th>Rank</th>
+              <th>Name</th>
+              <th>Nationality</th>
+              <th>Fav. Team</th>
+              <th>Age</th>
+              <th>Kills per round</th>
+              <th>Headshot percentage</th>
+              <th>Rating</th>
+              <th>Total maps played</th>
+              <th>Total prize money</th>
+            
+            </tr>
+
+          </thead>
+
+            <!--Tu są dane-->
+          
+            <tbody id="data-list"></tbody>
+        
+        </table>
+
+        <!--1 wykres-->
+
+        <div class="bar_chart">
+          <canvas id="myChart" width="300" height="200"></canvas>
+        </div>
+
+        <!-- 2 wykres -->
+
+        <br>
+        <br>
+
+        <div class = "pie_chart">
+          <canvas id="myChart3"></canvas>
+        </div>
+
       </center>
-    <!--Zespół-->
-    <div class="members-list">
-        <h2>Project Team Members</h2>
-        <ul>
-            <li><span class="member-name" style="color: #847577;">Group Leader - [1]</span></li>
-            <li><span class="member-name" style="color: #847577;">Team Member - [2]</span></li>
-            <li><span class="member-name" style="color: #847577;">Team Member - [3]</span></li>
-        </ul>
-    </div>
+
+      <!--Zespół-->
+
+      <div class="members-list">
+          <h2 class="mem_list_h2">Project Team Members:</h2>
+          <ul class="mem_list_ul">
+              <li class="mem_list_li"><span class="member-name" style="color: beige;">1. Group Leader - Mateusz Wójcik</span></li>
+              <li class="mem_list_li"><span class="member-name" style="color: beige;">2. Team Member - Jan Gąsienica</span></li>
+              <li class="mem_list_li"><span class="member-name" style="color: beige;">3. Team Member - Kanstantsin Malinouski</span></li>
+          </ul>
+      </div>
+
     </section>
     
-<footer>
-    <div class="footer-content">
-
-    </div>
-</footer>
+  <footer>
+    <div class="footer-content"></div>
+  </footer>
 </body>
 </html>
